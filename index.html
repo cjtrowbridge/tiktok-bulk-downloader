@@ -239,7 +239,7 @@
             ret = likes.map(like => {
                 const date = like.date.replace(/[^0-9]/g, '-');
                 return {
-                    url: like.Link,
+                    url: like.link,
                     filename: `like_${date}.mp4`
                 };
             });
