@@ -274,7 +274,7 @@
                 data.collections.forEach(collection => {
                     //script += `curl -o "${collection.filename}" "${collection.url}"\n`;
                     //This has to be done with yt-dlp because collections are not available for download via the tiktok api
-                    script += `yt-dlp -o "${collection.filename}" "${repost.url}"\n`;
+                    script += `yt-dlp -o "${collection.filename}" "${collection.url}"\n`;
                 });
             }
 
@@ -283,7 +283,7 @@
                 data.likes.forEach(like => {
                     //script += `curl -o "${like.filename}" "${like.url}"\n`;
                     //This has to be done with yt-dlp because likes are not available for download via the tiktok api
-                    script += `yt-dlp -o "${like.filename}" "${repost.url}"\n`;
+                    script += `yt-dlp -o "${like.filename}" "${like.url}"\n`;
                 });
             }
 
@@ -316,7 +316,7 @@
                 data.collections.forEach(collection => {
                     //script += `curl -o "${collection.filename}" "${collection.url}"\n`;
                     //This has to be done with yt-dlp because collections are not available for download via the tiktok api
-                    script += `yt-dlp -o "${collection.filename}" "${repost.url}"\n`;
+                    script += `yt-dlp -o "${collection.filename}" "${colllection.url}"\n`;
                 });
             }
 
@@ -325,7 +325,7 @@
                 data.likes.forEach(like => {
                     //script += `curl -o "${like.filename}" "${like.url}"\n`;
                     //This has to be done with yt-dlp because likes are not available for download via the tiktok api
-                    script += `yt-dlp -o "${like.filename}" "${repost.url}"\n`;
+                    script += `yt-dlp -o "${like.filename}" "${like.url}"\n`;
                 });
             }
 
