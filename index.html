@@ -47,19 +47,19 @@
             <label class="form-label">Select What to Download</label>
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="videos" id="downloadVideos">
-                <label class="form-check-label" for="downloadVideos">Your Videos</label>
+                <label class="form-check-label" for="downloadVideos">Your Videos (This still works!)</label>
             </div>
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="reposts" id="downloadReposts">
-                <label class="form-check-label" for="downloadReposts">Your Reposts</label>
+                <label class="form-check-label" for="downloadReposts"><strike>Your Reposts</strike> (This is broken now)</label>
             </div>
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="collections" id="downloadCollections">
-                <label class="form-check-label" for="downloadCollections">Your Collections</label>
+                <label class="form-check-label" for="downloadCollections"><strike>Your Collections</strike> (This is broken now)</label>
             </div>
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="likes" id="downloadLikes">
-                <label class="form-check-label" for="downloadLikes">Your Liked Videos</label>
+                <label class="form-check-label" for="downloadLikes"><strike></strike>Your Liked Videos</strike> (This is broken now)</label>
             </div>
         </div>
 
@@ -81,11 +81,11 @@
             let feedback = '';
 
             if (os === 'windows') {
-                feedback = 'You will need to have cURL installed to run the script. You can download it from https://curl.se/windows/. In order to download reposts, liked videos, and collections, you will need to have yt-dlp installed. You can download it from https://github.com/yt-dlp/yt-dlp';
+                feedback = 'You will need to have cURL installed to run the script. You can download it from https://curl.se/windows/. <strike>In order to download reposts, liked videos, and collections, you will need to have yt-dlp installed. You can download it from https://github.com/yt-dlp/yt-dlp</strike> (This is broken now)';
             } else if (os === 'mac') {
-            feedback = 'You will need to have cURL installed to run the script. You can install it using Homebrew with the command "brew install curl". In order to download reposts, liked videos, and collections, you will need to have yt-dlp installed. You can download it from https://github.com/yt-dlp/yt-dlp';
+            feedback = 'You will need to have cURL installed to run the script. You can install it using Homebrew with the command "brew install curl". <strike>In order to download reposts, liked videos, and collections, you will need to have yt-dlp installed. You can download it from https://github.com/yt-dlp/yt-dlp</strike> (This is broken now)';
             } else if (os === 'linux') {
-                feedback = 'You will need to have cURL installed to run the script. You can install it using your package manager. In order to download reposts, liked videos, and collections, you will need to have yt-dlp installed. You can download it from https://github.com/yt-dlp/yt-dlp';
+                feedback = 'You will need to have cURL installed to run the script. You can install it using your package manager. <strike>In order to download reposts, liked videos, and collections, you will need to have yt-dlp installed. You can download it from https://github.com/yt-dlp/yt-dlp</strike> (This is broken now)';
             }
 
             $('#osSpecificFeedback').html(`<p class="text-muted">${feedback}</p>`);
