@@ -259,7 +259,6 @@
         }
 
         function generateWindowsScript(data) {
-            // Example script generation for Windows
             let script = '@echo off\n';
             script += 'echo Downloading TikTok data...\n';
 
@@ -273,27 +272,21 @@
             if (data.reposts) {
                 script += 'echo Downloading reposts...\n';
                 data.reposts.forEach(repost => {
-                    //script += `curl -o "${repost.filename}" "${repost.url}"\n`;
-                    //This has to be done with yt-dlp because reposts are not available for download via the tiktok api
-                    script += `yt-dlp -o "${repost.filename}" "${repost.url}"\n`;
+                    script += `if(!(Test-Path "${repost.filename}")){yt-dlp -o "${repost.filename}" "${repost.url}"}\n`;
                 });
             }
 
             if (data.collections) {
                 script += 'echo Downloading collections...\n';
                 data.collections.forEach(collection => {
-                    //script += `curl -o "${collection.filename}" "${collection.url}"\n`;
-                    //This has to be done with yt-dlp because collections are not available for download via the tiktok api
-                    script += `yt-dlp -o "${collection.filename}" "${collection.url}"\n`;
+                    script += `if(!(Test-Path "${collection.filename}")){yt-dlp -o "${collection.filename}" "${colllection.url}"}\n`;
                 });
             }
 
             if (data.likes) {
                 script += 'echo Downloading liked videos...\n';
                 data.likes.forEach(like => {
-                    //script += `curl -o "${like.filename}" "${like.url}"\n`;
-                    //This has to be done with yt-dlp because likes are not available for download via the tiktok api
-                    script += `yt-dlp -o "${like.filename}" "${like.url}"\n`;
+                    script += `if(!(Test-Path "${like.filename}")){yt-dlp -o "${like.filename}" "${like.url}"}\n`;
                 });
             }
 
@@ -301,7 +294,6 @@
         }
 
         function generateMacScript(data) {
-            // Example script generation for Mac
             let script = '#!/bin/bash\n';
             script += 'echo "Downloading TikTok data..."\n';
 
@@ -315,27 +307,21 @@
             if (data.reposts) {
                 script += 'echo "Downloading reposts..."\n';
                 data.reposts.forEach(repost => {
-                    //script += `curl -o "${repost.filename}" "${repost.url}"\n`;
-                    //This has to be done with yt-dlp because reposts are not available for download via the tiktok api
-                    script += `yt-dlp -o "${repost.filename}" "${repost.url}"\n`;
+                    script += `if [ ! -e "${repost.filename}" ]; then yt-dlp -o "${repost.filename}" "${repost.url}"; fi\n`;
                 });
             }
 
             if (data.collections) {
                 script += 'echo "Downloading collections..."\n';
                 data.collections.forEach(collection => {
-                    //script += `curl -o "${collection.filename}" "${collection.url}"\n`;
-                    //This has to be done with yt-dlp because collections are not available for download via the tiktok api
-                    script += `yt-dlp -o "${collection.filename}" "${colllection.url}"\n`;
+                    script += `if [ ! -e "${collection.filename}" ]; then yt-dlp -o "${collection.filename}" "${collection.url}"; fi\n`;
                 });
             }
 
             if (data.likes) {
                 script += 'echo "Downloading liked videos..."\n';
                 data.likes.forEach(like => {
-                    //script += `curl -o "${like.filename}" "${like.url}"\n`;
-                    //This has to be done with yt-dlp because likes are not available for download via the tiktok api
-                    script += `yt-dlp -o "${like.filename}" "${like.url}"\n`;
+                    script += `if [ ! -e "${like.filename}" ]; then yt-dlp -o "${like.filename}" "${like.url}"; fi\n`;
                 });
             }
 
@@ -343,7 +329,6 @@
         }
 
         function generateLinuxScript(data) {
-            // Example script generation for Linux
             let script = '#!/bin/bash\n';
             script += 'echo "Downloading TikTok data..."\n';
 
@@ -357,27 +342,21 @@
             if (data.reposts) {
                 script += 'echo "Downloading reposts..."\n';
                 data.reposts.forEach(repost => {
-                    //script += `curl -o "${repost.filename}" "${repost.url}"\n`;
-                    //This has to be done with yt-dlp because reposts are not available for download via the tiktok api
-                    script += `yt-dlp -o "${repost.filename}" "${repost.url}"\n`;
+                    script += `if [ ! -e "${repost.filename}" ]; then yt-dlp -o "${repost.filename}" "${repost.url}"; fi\n`;
                 });
             }
 
             if (data.collections) {
                 script += 'echo "Downloading collections..."\n';
                 data.collections.forEach(collection => {
-                    //script += `curl -o "${collection.filename}" "${collection.url}"\n`;
-                    //This has to be done with yt-dlp because reposts are not available for download via the tiktok api
-                    script += `yt-dlp -o "${collection.filename}" "${collection.url}"\n`;
+                    script += `if [ ! -e "${collection.filename}" ]; then yt-dlp -o "${collection.filename}" "${collection.url}"; fi\n`;
                 });
             }
 
             if (data.likes) {
                 script += 'echo "Downloading liked videos..."\n';
                 data.likes.forEach(like => {
-                    //script += `curl -o "${like.filename}" "${like.url}"\n`;
-                    //This has to be done with yt-dlp because reposts are not available for download via the tiktok api
-                    script += `yt-dlp -o "${like.filename}" "${like.url}"\n`;
+                    script += `if [ ! -e "${like.filename}" ]; then yt-dlp -o "${like.filename}" "${like.url}"; fi\n`;
                 });
             }
 
