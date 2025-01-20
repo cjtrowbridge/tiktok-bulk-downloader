@@ -279,7 +279,7 @@
             if (data.collections) {
                 script += 'echo Downloading collections...\n';
                 data.collections.forEach(collection => {
-                    script += `if(!(Test-Path "${collection.filename}")){yt-dlp -o "${collection.filename}" "${colllection.url}"}\n`;
+                    script += `if(!(Test-Path "${collection.filename}")){yt-dlp -o "${collection.filename}" "${collection.url}"}\n`;
                 });
             }
 
